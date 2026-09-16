@@ -3,127 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Hoja de Vida - Ami</title>
-<style>
-  :root{
-    --rosa-oscuro:#a6395e;
-    --rosa-medio:#c96b8f;
-    --rosa-claro:#f6d1de;
-    --crema:#fff8f5;
-    --texto:#3d2b30;
-  }
-  *{box-sizing:border-box; margin:0; padding:0;}
-  body{
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background:var(--crema);
-    color:var(--texto);
-    line-height:1.5;
-  }
-
-  /* ---------- Contenedor general ---------- */
-  #contenedor-principal{
-    max-width:900px;
-    margin:30px auto;
-    background:#ffffff;
-    box-shadow:0 0 25px rgba(0,0,0,0.12);
-    border-radius:10px;
-    overflow:hidden;
-  }
-
-  /* ---------- Encabezado / datos personales ---------- */
-  #datos-personales{
-    display:flex;
-    align-items:center;
-    gap:25px;
-    background:linear-gradient(120deg, var(--rosa-oscuro), var(--rosa-medio));
-    color:#fff;
-    padding:30px;
-  }
-  #foto-contenedor img{
-    width:150px;
-    height:150px;
-    object-fit:cover;
-    border-radius:50%;
-    border:4px solid #fff;
-  }
-  #info-personal h1{
-    font-size:28px;
-    margin-bottom:5px;
-  }
-  #info-personal h2{
-    font-weight:400;
-    font-size:16px;
-    opacity:0.9;
-    margin-bottom:12px;
-  }
-  #info-personal p{ font-size:14px; margin:2px 0; }
-
-  /* ---------- Secciones generales ---------- */
-  .seccion{
-    padding:25px 35px;
-    border-bottom:1px solid #f0e2e6;
-  }
-  .seccion h3{
-    color:var(--rosa-oscuro);
-    font-size:19px;
-    text-transform:uppercase;
-    letter-spacing:1px;
-    border-left:5px solid var(--rosa-medio);
-    padding-left:10px;
-    margin-bottom:15px;
-  }
-
-  /* ---------- Estudios / experiencia / capacitaciones ---------- */
-  .item{
-    margin-bottom:14px;
-    padding-left:10px;
-    border-left:2px solid var(--rosa-claro);
-  }
-  .item .titulo{
-    font-weight:600;
-    color:var(--rosa-oscuro);
-  }
-  .item .fecha{
-    font-size:13px;
-    color:#8a7378;
-    font-style:italic;
-  }
-  .item .detalle{
-    font-size:14px;
-    margin-top:3px;
-  }
-
-  /* ---------- Tabla de referencias ---------- */
-  table{
-    width:100%;
-    border-collapse:collapse;
-    font-size:14px;
-  }
-  th, td{
-    padding:10px 12px;
-    text-align:left;
-    border:1px solid #eadce1;
-  }
-  th{
-    background:var(--rosa-claro);
-    color:var(--rosa-oscuro);
-  }
-  tr:nth-child(even){ background:#fdf6f8; }
-
-  /* ---------- Pie de página ---------- */
-  #pie-pagina{
-    background:var(--rosa-oscuro);
-    color:#fff;
-    text-align:center;
-    padding:15px;
-    font-size:13px;
-  }
-  #pie-pagina a{ color:#ffe3ec; }
-
-  @media print{
-    body{ background:#fff; }
-    #contenedor-principal{ box-shadow:none; margin:0; max-width:100%; }
-  }
-</style>
+<!-- Enlace a la hoja de estilos externa (carpeta css/) -->
+<link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
 
@@ -132,6 +13,10 @@
   <!-- Contenedor: Datos personales -->
   <div id="datos-personales">
     <div id="foto-contenedor">
+      <!-- FOTO PERSONAL:
+           El archivo de la imagen debe estar dentro de la carpeta img/.
+           Reemplaza "foto-perfil.svg" por el nombre real de tu foto,
+           por ejemplo: img/foto-perfil.jpg  o  img/foto-perfil.png -->
       <img src="img/foto-perfil.svg" alt="Foto personal">
     </div>
     <div id="info-personal">
