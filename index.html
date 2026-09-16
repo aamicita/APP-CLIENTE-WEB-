@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Hoja de Vida - Ami</title>
+<style>
+  :root{
+    --rosa-oscuro:#a6395e;
+    --rosa-medio:#c96b8f;
+    --rosa-claro:#f6d1de;
+    --crema:#fff8f5;
+    --texto:#3d2b30;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background:var(--crema);
+    color:var(--texto);
+    line-height:1.5;
+  }
+
+  /* ---------- Contenedor general ---------- */
+  #contenedor-principal{
+    max-width:900px;
+    margin:30px auto;
+    background:#ffffff;
+    box-shadow:0 0 25px rgba(0,0,0,0.12);
+    border-radius:10px;
+    overflow:hidden;
+  }
+
+  /* ---------- Encabezado / datos personales ---------- */
+  #datos-personales{
+    display:flex;
+    align-items:center;
+    gap:25px;
+    background:linear-gradient(120deg, var(--rosa-oscuro), var(--rosa-medio));
+    color:#fff;
+    padding:30px;
+  }
+  #foto-contenedor img{
+    width:150px;
+    height:150px;
+    object-fit:cover;
+    border-radius:50%;
+    border:4px solid #fff;
+  }
+  #info-personal h1{
+    font-size:28px;
+    margin-bottom:5px;
+  }
+  #info-personal h2{
+    font-weight:400;
+    font-size:16px;
+    opacity:0.9;
+    margin-bottom:12px;
+  }
+  #info-personal p{ font-size:14px; margin:2px 0; }
+
+  /* ---------- Secciones generales ---------- */
+  .seccion{
+    padding:25px 35px;
+    border-bottom:1px solid #f0e2e6;
+  }
+  .seccion h3{
+    color:var(--rosa-oscuro);
+    font-size:19px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    border-left:5px solid var(--rosa-medio);
+    padding-left:10px;
+    margin-bottom:15px;
+  }
+
+  /* ---------- Estudios / experiencia / capacitaciones ---------- */
+  .item{
+    margin-bottom:14px;
+    padding-left:10px;
+    border-left:2px solid var(--rosa-claro);
+  }
+  .item .titulo{
+    font-weight:600;
+    color:var(--rosa-oscuro);
+  }
+  .item .fecha{
+    font-size:13px;
+    color:#8a7378;
+    font-style:italic;
+  }
+  .item .detalle{
+    font-size:14px;
+    margin-top:3px;
+  }
+
+  /* ---------- Tabla de referencias ---------- */
+  table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14px;
+  }
+  th, td{
+    padding:10px 12px;
+    text-align:left;
+    border:1px solid #eadce1;
+  }
+  th{
+    background:var(--rosa-claro);
+    color:var(--rosa-oscuro);
+  }
+  tr:nth-child(even){ background:#fdf6f8; }
+
+  /* ---------- Pie de página ---------- */
+  #pie-pagina{
+    background:var(--rosa-oscuro);
+    color:#fff;
+    text-align:center;
+    padding:15px;
+    font-size:13px;
+  }
+  #pie-pagina a{ color:#ffe3ec; }
+
+  @media print{
+    body{ background:#fff; }
+    #contenedor-principal{ box-shadow:none; margin:0; max-width:100%; }
+  }
+</style>
+</head>
+<body>
+
+<div id="contenedor-principal">
+
+  <!-- Contenedor: Datos personales -->
+  <div id="datos-personales">
+    <div id="foto-contenedor">
+      <img src="img/foto-perfil.svg" alt="Foto personal">
+    </div>
+    <div id="info-personal">
+      <h1>Ami</h1>
+      <h2>Estudiante de Ingeniería en Software · Emprendedora</h2>
+      <p>📍 Manta, Manabí, Ecuador</p>
+      <p>🎓 ULEAM – Facultad de Ciencias Informáticas</p>
+      <p>💻 GitHub: github.com/aamicita</p>
+    </div>
+  </div>
+
+  <!-- Contenedor: Perfil breve -->
+  <div class="seccion">
+    <h3>Perfil</h3>
+    <p>Estudiante de quinto semestre de Ingeniería en Software en la ULEAM, con experiencia previa en
+    emprendimiento propio en el sector floral y alimenticio. Interesada en desarrollo de software,
+    bases de datos distribuidas, arquitectura de software y proyectos con impacto social.</p>
+  </div>
+
+  <!-- Contenedor: Estudios realizados -->
+  <div class="seccion" id="estudios">
+    <h3>Estudios Realizados</h3>
+    <div class="item">
+      <div class="titulo">Ingeniería en Software (en curso)</div>
+      <div class="fecha">Universidad Laica Eloy Alfaro de Manabí (ULEAM) — 5to semestre</div>
+      <div class="detalle">
+        Materias cursadas/aprobadas: Programación Orientada a Objetos (POO), Administración de Bases
+        de Datos Distribuidas, Arquitectura de Software, Estadística para Ingeniería, Modelado de
+        Software, entre otras hasta Nivel 4.
+      </div>
+    </div>
+    <div class="item">
+      <div class="titulo">Educación Secundaria (Bachillerato)</div>
+      <div class="fecha">Manta, Ecuador</div>
+      <div class="detalle">Formación general de bachillerato previa al ingreso a la universidad.</div>
+    </div>
+  </div>
+
+  <!-- Contenedor: Experiencia laboral -->
+  <div class="seccion" id="experiencia">
+    <h3>Experiencia Laboral</h3>
+    <div class="item">
+      <div class="titulo">Fundadora y encargada — El Arte de Crear</div>
+      <div class="fecha">Manta, Ecuador</div>
+      <div class="detalle">
+        Negocio propio de diseño floral: creación de arreglos, atención al cliente y gestión de pedidos.
+      </div>
+    </div>
+    <div class="item">
+      <div class="titulo">Encargada de tienda — Roses Lolas</div>
+      <div class="fecha">Manta, Ecuador</div>
+      <div class="detalle">
+        Venta de arreglos florales y productos relacionados; diseño de catálogos de producto y
+        campañas promocionales por fechas especiales (Día del Padre, Día de la Madre, etc.).
+      </div>
+    </div>
+    <div class="item">
+      <div class="titulo">Colaboradora — Negocio familiar de comida (bolón esmeraldeño)</div>
+      <div class="fecha">Manta, Ecuador</div>
+      <div class="detalle">
+        Apoyo en la producción y promoción de bolón esmeraldeño con carne mechada/chancho; desarrollo
+        de contenido audiovisual y estrategias de marketing dirigidas al público local.
+      </div>
+    </div>
+    <div class="item">
+      <div class="titulo">Gestora de proyecto social — SANARTE</div>
+      <div class="fecha">Manta, Ecuador</div>
+      <div class="detalle">
+        Organización de talleres de sanación emocional y empoderamiento comunitario a través de la
+        expresión artística.
+      </div>
+    </div>
+  </div>
+
+  <!-- Contenedor: Capacitaciones -->
+  <div class="seccion" id="capacitaciones">
+    <h3>Capacitaciones</h3>
+    <div class="item">
+      <div class="titulo">Patrones de diseño y arquitectura de software</div>
+      <div class="detalle">MVC, MVP, MVVM y los 10 patrones de comportamiento de GoF, aplicados en proyectos académicos.</div>
+    </div>
+    <div class="item">
+      <div class="titulo">Bases de datos distribuidas</div>
+      <div class="detalle">Teorema CAP, PACELC, ACID, 2PC/3PC y control de concurrencia (2PL, MVCC, OCC) con Cassandra y CockroachDB.</div>
+    </div>
+    <div class="item">
+      <div class="titulo">Seguridad y privacidad en sistemas distribuidos</div>
+      <div class="detalle">mTLS, HashiCorp Vault y normativa LOPDP (Ecuador), con demo práctica en Docker/PostgreSQL.</div>
+    </div>
+    <div class="item">
+      <div class="titulo">Fundamentos de Inteligencia Artificial</div>
+      <div class="detalle">Prolog, sistemas expertos, redes neuronales, tipos de aprendizaje automático y agentes inteligentes (REAS).</div>
+    </div>
+  </div>
+
+  <!-- Contenedor: Referencias personales -->
+  <div class="seccion" id="referencias">
+    <h3>Referencias Personales</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Cargo / Profesión</th>
+          <th>Teléfono</th>
+          <th>Correo Electrónico</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>[Nombre de referencia 1]</td>
+          <td>[Cargo o profesión]</td>
+          <td>[09XXXXXXXX]</td>
+          <td>[correo@ejemplo.com]</td>
+        </tr>
+        <tr>
+          <td>[Nombre de referencia 2]</td>
+          <td>[Cargo o profesión]</td>
+          <td>[09XXXXXXXX]</td>
+          <td>[correo@ejemplo.com]</td>
+        </tr>
+        <tr>
+          <td>[Nombre de referencia 3]</td>
+          <td>[Cargo o profesión]</td>
+          <td>[09XXXXXXXX]</td>
+          <td>[correo@ejemplo.com]</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size:12px; color:#8a7378; margin-top:8px;">
+      * Reemplaza los datos entre corchetes con la información real de tus referencias antes de entregar el trabajo.
+    </p>
+  </div>
+
+  <div id="pie-pagina">
+    Repositorio del proyecto: <a href="https://github.com/aamicita">github.com/aamicita</a>
+  </div>
+
+</div>
+</body>
+</html>
