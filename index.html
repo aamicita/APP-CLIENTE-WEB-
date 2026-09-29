@@ -2,157 +2,90 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Hoja de Vida - Ami</title>
-<!-- Enlace a la hoja de estilos externa (carpeta css/) -->
-<link rel="stylesheet" href="css/estilos.css">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Registro de Clientes</title>
+
+<!-- Fuentes externas (solo tipografía, no afecta la lógica) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,700;1,500&family=Sans:wght@400;600&display=swap" rel="stylesheet">
+
+<!-- CSS en archivo aparte, como pide la actividad -->
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<div class="wrap">
+  <h1>Registro de clientes</h1>
+  <p class="lede">Ingresa los datos del cliente. Cada campo se valida antes de guardarse.</p>
 
-<div id="contenedor-principal">
+  <!--
+    FORMULARIO PRINCIPAL
+    novalidate: desactivamos la validación automática del navegador
+    porque TODA la validación la hacemos nosotros mismos en script.js,
+    para poder mostrar mensajes personalizados en español.
+  -->
+  <form id="f" novalidate>
 
-  <!-- Contenedor: Datos personales -->
-  <div id="datos-personales">
-    <div id="foto-contenedor">
-      <!-- FOTO PERSONAL:
-           El archivo de la imagen debe estar dentro de la carpeta img/.
-           Reemplaza "foto-perfil.svg" por el nombre real de tu foto,
-           por ejemplo: img/foto-perfil.jpg  o  img/foto-perfil.png -->
-       <img src="img/FotoP.png" alt="Foto personal">
+    <!-- ============ CAMPO: CÉDULA ============ -->
+    <!-- Validación en JS: debe tener EXACTAMENTE 10 dígitos numéricos -->
+    <div class="field" data-field="cedula">
+      <label for="cedula">Cédula</label>
+      <input id="cedula" inputmode="numeric" maxlength="10" placeholder="10 dígitos">
+      <div class="hint">Debe tener exactamente 10 dígitos numéricos.</div>
     </div>
-    <div id="info-personal">
-      <h1>Ami</h1>
-      <h2>Estudiante de Ingeniería en Software · Emprendedora</h2>
-      <p>📍 Manta, Manabí, Ecuador</p>
-      <p>🎓 ULEAM – Facultad de Ciencias Informáticas</p>
-      <p>💻 GitHub: github.com/aamicita</p>
-    </div>
-  </div>
 
-  <!-- Contenedor: Perfil breve -->
-  <div class="seccion">
-    <h3>Perfil</h3>
-    <p>Estudiante de quinto semestre de Ingeniería en Software en la ULEAM, con experiencia previa en
-    emprendimiento propio en el sector floral y alimenticio. Interesada en desarrollo de software,
-    bases de datos distribuidas, arquitectura de software y proyectos con impacto social.</p>
-  </div>
+    <!-- ============ CAMPO: NOMBRE ============ -->
+    <!-- Validación en JS: no puede estar vacío y máximo 30 caracteres -->
+    <div class="field" data-field="nombre">
+      <label for="nombre">Nombre</label>
+      <input id="nombre" maxlength="30" placeholder="Nombre completo">
+      <span class="counter" id="c-nombre">0/30</span>
+      <div class="hint">Hasta 30 caracteres.</div>
+    </div>
 
-  <!-- Contenedor: Estudios realizados -->
-  <div class="seccion" id="estudios">
-    <h3>Estudios Realizados</h3>
-    <div class="item">
-      <div class="titulo">Ingeniería en Software (en curso)</div>
-      <div class="fecha">Universidad Laica Eloy Alfaro de Manabí (ULEAM) — 5to semestre</div>
-      <div class="detalle">
-        Materias cursadas/aprobadas: Programación Orientada a Objetos (POO), Administración de Bases
-        de Datos Distribuidas, Arquitectura de Software, Estadística para Ingeniería, Modelado de
-        Software, entre otras hasta Nivel 4.
-      </div>
+    <!-- ============ CAMPO: DIRECCIÓN ============ -->
+    <!-- Validación en JS: no puede estar vacío y máximo 50 caracteres -->
+    <div class="field" data-field="direccion">
+      <label for="direccion">Dirección</label>
+      <input id="direccion" maxlength="50" placeholder="Calle, número, sector">
+      <span class="counter" id="c-direccion">0/50</span>
+      <div class="hint">Hasta 50 caracteres.</div>
     </div>
-    <div class="item">
-      <div class="titulo">Educación Secundaria (Bachillerato)</div>
-      <div class="fecha">Manta, Ecuador</div>
-      <div class="detalle">Formación general de bachillerato previa al ingreso a la universidad.</div>
-    </div>
-  </div>
 
-  <!-- Contenedor: Experiencia laboral -->
-  <div class="seccion" id="experiencia">
-    <h3>Experiencia Laboral</h3>
-    <div class="item">
-      <div class="titulo">Fundadora y encargada — El Arte de Crear</div>
-      <div class="fecha">Manta, Ecuador</div>
-      <div class="detalle">
-        Negocio propio de diseño floral: creación de arreglos, atención al cliente y gestión de pedidos.
-      </div>
+    <!-- ============ CAMPO: TELÉFONO CELULAR ============ -->
+    <!-- Validación en JS: 10 dígitos y debe empezar con "09" (formato Ecuador) -->
+    <div class="field" data-field="telefono">
+      <label for="telefono">Teléfono celular</label>
+      <input id="telefono" inputmode="numeric" maxlength="10" placeholder="09XXXXXXXX">
+      <div class="hint">10 dígitos, debe iniciar con 09.</div>
     </div>
-    <div class="item">
-      <div class="titulo">Encargada de tienda — Roses Lolas</div>
-      <div class="fecha">Manta, Ecuador</div>
-      <div class="detalle">
-        Venta de arreglos florales y productos relacionados; diseño de catálogos de producto y
-        campañas promocionales por fechas especiales (Día del Padre, Día de la Madre, etc.).
-      </div>
-    </div>
-    <div class="item">
-      <div class="titulo">Colaboradora — Negocio familiar de comida (bolón esmeraldeño)</div>
-      <div class="fecha">Manta, Ecuador</div>
-      <div class="detalle">
-        Apoyo en la producción y promoción de bolón esmeraldeño con carne mechada/chancho; desarrollo
-        de contenido audiovisual y estrategias de marketing dirigidas al público local.
-      </div>
-    </div>
-    <div class="item">
-      <div class="titulo">Gestora de proyecto social — SANARTE</div>
-      <div class="fecha">Manta, Ecuador</div>
-      <div class="detalle">
-        Organización de talleres de sanación emocional y empoderamiento comunitario a través de la
-        expresión artística.
-      </div>
-    </div>
-  </div>
 
-  <!-- Contenedor: Capacitaciones -->
-  <div class="seccion" id="capacitaciones">
-    <h3>Capacitaciones</h3>
-    <div class="item">
-      <div class="titulo">Patrones de diseño y arquitectura de software</div>
-      <div class="detalle">MVC, MVP, MVVM y los 10 patrones de comportamiento de GoF, aplicados en proyectos académicos.</div>
+    <!-- ============ CAMPO: CORREO ELECTRÓNICO ============ -->
+    <!-- Validación en JS: debe tener formato de correo (texto@texto.texto) -->
+    <div class="field" data-field="correo">
+      <label for="correo">Correo electrónico</label>
+      <input id="correo" type="email" placeholder="nombre@correo.com">
+      <div class="hint">Formato de correo válido.</div>
     </div>
-    <div class="item">
-      <div class="titulo">Bases de datos distribuidas</div>
-      <div class="detalle">Teorema CAP, PACELC, ACID, 2PC/3PC y control de concurrencia (2PL, MVCC, OCC) con Cassandra y CockroachDB.</div>
-    </div>
-    <div class="item">
-      <div class="titulo">Seguridad y privacidad en sistemas distribuidos</div>
-      <div class="detalle">mTLS, HashiCorp Vault y normativa LOPDP (Ecuador), con demo práctica en Docker/PostgreSQL.</div>
-    </div>
-    <div class="item">
-      <div class="titulo">Fundamentos de Inteligencia Artificial</div>
-      <div class="detalle">Prolog, sistemas expertos, redes neuronales, tipos de aprendizaje automático y agentes inteligentes (REAS).</div>
-    </div>
-  </div>
 
-  <!-- Contenedor: Referencias personales -->
-  <div class="seccion" id="referencias">
-    <h3>Referencias Personales</h3>
-    <table>
-      <thead>
-        <tr>
-          <th>Nombre</th>
-          <th>Cargo / Profesión</th>
-          <th>Teléfono</th>
-          <th>Correo Electrónico</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>[Derek]</td>
-          <td>[Empleado respuestos del chino]</td>
-          <td>[094544533]</td>
-          <td>[k8ikiola@hotmail.com]</td>
-        </tr>
-        <tr>
-          <td>[Manuela]</td>
-          <td>[emprendedora]</td>
-          <td>[093456892]</td>
-          <td>[salgado@gmail.com]</td>
-        </tr>
-        <tr>
-          <td>[Oliver]</td>
-          <td>[metereologo]</td>
-          <td>[093116224]</td>
-          <td>[oligbe@hotmail.com]</td>
-        </tr>
-      </tbody>
-    </table>
-    <p style="font-size:12px; color:#8a7378; margin-top:8px;">
-    </p>
-  </div>
+    <!-- Aquí se muestra el mensaje de éxito o error después de intentar guardar -->
+    <div id="msg"></div>
 
-  <div id="pie-pagina">
-    Repositorio del proyecto: <a href="https://github.com/aamicita">github.com/aamicita</a>
-  </div>
+    <button type="submit">Guardar cliente</button>
+  </form>
 
+  <!-- Tabla donde se listan los clientes ya guardados (viene de script.js) -->
+  <table>
+    <caption>Clientes registrados</caption>
+    <thead>
+      <tr><th>Cédula</th><th>Nombre</th><th>Dirección</th><th>Teléfono</th><th>Correo</th><th></th></tr>
+    </thead>
+    <tbody id="rows"></tbody>
+  </table>
+  <p class="empty" id="empty">Aún no hay clientes registrados.</p>
 </div>
+
+<!-- JS en archivo aparte: aquí viven las validaciones -->
+<script src="script.js"></script>
 </body>
 </html>
