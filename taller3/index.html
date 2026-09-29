@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bucle de 5 operaciones</title>
+
+  <!-- Enlazamos el archivo de estilos (CSS) -->
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <main>
+    <h1>Bucle de 5 operaciones</h1>
+    <p class="intro">Escribe dos números y el programa hará una operación distinta en cada vuelta del bucle.</p>
+
+    <div class="tarjeta">
+      <!-- Campos para ingresar los 2 números -->
+      <div class="campos">
+        <label>Número 1
+          <input type="number" id="num1" placeholder="Ej: 10">
+        </label>
+        <label>Número 2
+          <input type="number" id="num2" placeholder="Ej: 3">
+        </label>
+      </div>
+
+      <!-- Botón que ejecuta el cálculo -->
+      <button id="btnCalcular">Calcular</button>
+
+      <!-- Aquí se muestran los mensajes de error -->
+      <p id="mensaje" role="alert"></p>
+
+      <!-- Aquí JavaScript va a escribir los 5 resultados -->
+      <ol id="resultados"></ol>
+    </div>
+  </main>
+
+  <!-- Enlazamos el archivo de JavaScript (al final del body) -->
+  <script src="script.js"></script>
+</body>
+</html>

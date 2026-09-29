@@ -1,0 +1,138 @@
+/* ===== COLORES (variables) ===== */
+:root {
+  --fondo: #f3f6f4;
+  --tarjeta: #ffffff;
+  --texto: #1c2a25;
+  --suave: #5a6b64;
+  --acento: #1f7a5c;
+  --borde: #d5dfda;
+  --error: #b3261e;
+}
+
+/* Colores para cuando el dispositivo usa modo oscuro */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fondo: #121a17;
+    --tarjeta: #1a2521;
+    --texto: #e6efeb;
+    --suave: #98aaa2;
+    --acento: #4fc59d;
+    --borde: #2c3b35;
+    --error: #ff8a80;
+  }
+}
+
+/* ===== ESTILOS GENERALES ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 24px 16px;
+  background: var(--fondo);
+  color: var(--texto);
+  font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+  line-height: 1.5;
+}
+
+main {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 1.6rem;
+  margin: 0 0 4px;
+}
+
+p.intro {
+  color: var(--suave);
+  margin: 0 0 20px;
+}
+
+/* ===== TARJETA PRINCIPAL ===== */
+.tarjeta {
+  background: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  padding: 18px;
+}
+
+/* Los dos campos van uno al lado del otro (o uno debajo del otro en celular) */
+.campos {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.campos label {
+  flex: 1 1 140px;
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+input {
+  width: 100%;
+  margin-top: 6px;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid var(--borde);
+  border-radius: 6px;
+  background: var(--fondo);
+  color: var(--texto);
+}
+
+/* Resalta el elemento cuando se navega con el teclado */
+input:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--acento);
+  outline-offset: 2px;
+}
+
+button {
+  margin-top: 14px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  background: var(--acento);
+  color: var(--fondo);
+  cursor: pointer;
+}
+
+/* Mensaje de error */
+#mensaje {
+  color: var(--error);
+  min-height: 1.4em;
+  margin: 10px 0 0;
+}
+
+/* ===== LISTA DE RESULTADOS ===== */
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--borde);
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+.op {
+  color: var(--suave);
+}
+
+.valor {
+  font-weight: bold;
+  color: var(--acento);
+}
